@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>Add a new user</h1><hr/>
+
+    <form action="/user/create" method="POST">
+        <div class="row">
+            <div class="form-group col-sm-8">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="name" placeholder="Username">
+            </div>
+
+            <div class="form-group col-sm-8">
+                <label for="occupation">Occupation</label>
+                <input type="text" class="form-control" name="occupation" placeholder="Occupation">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="checkbox" name="newsletter" checked>
+            <label for="newsletter">I would like to receive ads</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,62 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid #ccc;
+    width: 100%;
+    padding: 10px;
+}
+
+.btn {
+    min-width: 140px;
+}
+
+.btn-primary {
+    font-size: 16px;
+    padding: 5px;
+}
+
+.btn-edit {
+    margin-left: 20px;
+}
+
+.btn-remove-address {
+    border: none;
+    background-color: white;
+    color: red;
+    margin-left: 1em;
+}
+
+.btn-remove-address:hover {
+    text-decoration: underline;
+}
+
+.navbar-nav {
+    padding: 15px;
+}
+
+.nav-item {
+    padding-left: 15px;
+}
+
+.nav-link {
+    font-size: 16px;
+}
+
+.nav-link:hover {
+    text-decoration: none;
+}
+
+.table {
+    border-bottom: 1px solid #ccc;
+}
+
+.form-address {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.address-title {
+    padding-left: 20px;
+    margin-bottom: -20px;
+}

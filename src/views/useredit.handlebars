@@ -1,0 +1,57 @@
+<div class="container">
+    <h1>Update {{user.name}}</h1><hr/>
+
+    <form action="/user/edit" method="POST">
+        <input type="hidden" name="id" value="{{user.id}}">
+
+        <div class="row">
+            <div class="form-group col-sm-8">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="name" value="{{user.name}}">
+            </div>
+
+            <div class="form-group col-sm-8">
+                <label for="occupation">Occupation</label>
+                <input type="text" class="form-control" name="occupation" value="{{user.occupation}}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            {{#if user.newsletter}}
+            <input type="checkbox" name="newsletter" checked>
+            {{else}}
+            <input type="checkbox" name="newsletter">
+            {{/if}}
+            <label for="newsletter">I would like to receive ads</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+
+    <h2>Add Address</h2><hr>
+
+    <form action="/address/create" method="POST">
+        <input type="hidden" name="UserId" value="{{user.id}}">
+
+        <div class="row">
+            <div class="form-group col-sm-8">
+                <label for="street">Street</label>
+                <input type="text" class="form-control" name="street" placeholder="Street">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-sm-4">
+                <label for="number">Number</label>
+                <input type="text" class="form-control" name="number" placeholder="Number">
+            </div>
+
+            <div class="form-group col-sm-4">
+                <label for="city">City</label>
+                <input type="text" class="form-control" name="city" placeholder="City">
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Include Address</button>
+    </form>
+</div>

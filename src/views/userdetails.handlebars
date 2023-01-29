@@ -1,0 +1,51 @@
+<div class="container">
+    <h1>User details</h1><hr/>
+
+    <div class="card">
+        <div class="card-header">
+            <h2>{{user.name}}</h2>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">{{user.occupation}}</h4>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+                occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
+                id est laborum.</p>
+
+            <p>
+                <span>
+                    <b>Receive newsletter: </b>
+                    {{#if user.newsletter}}
+                    Yes
+                    {{else}}
+                    No
+                    {{/if}}
+                </span>
+            </p>
+
+            {{#if user.addresses}}
+            <h3 class="address-title">Address</h3><hr>
+            {{#each user.addresses}}
+            <form action="/address/delete" method="POST">
+                <div class="raw form-address">
+                    <div class="form-group">
+                        <label>{{this.street}} - {{this.number}} - {{this.city}}</label>
+                        <input type="hidden" name="UserId" value="{{this.UserId}}">
+                        <input type="hidden" name="id" value="{{this.id}}">
+                        <input type="submit" class="btn-remove-address" value="Remove this address">
+                    </div>
+                </div>
+            </form>
+            {{/each}}
+            {{/if}}
+            
+            <span>
+                <a href="/user/list" class="btn btn-default btn-sm">Back to list</a>
+                <a href="/user/edit/{{user.id}}" class="btn btn-warning btn-sm btn-edit">Update</a>
+            </span>
+        </div>
+    </div>
+</div>

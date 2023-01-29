@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>Users list</h1><hr/>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Occupation</th>
+                <th colspan="2"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each users_view}}
+            <tr>
+                <th scope="row">{{this.id}}</th>
+                <td>{{this.name}}</td>
+                <td>{{this.occupation}}</td>
+                <td><a href="/user/{{this.id}}">User details</a></td>
+                <td>
+                    <a class="btn btn-danger btn-sm" href="/user/delete/{{this.id}}"
+                        onclick="return confirm('Are you sure to remove {{this.name}}?')">Delete</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
